@@ -4,7 +4,7 @@
       The box
       <input type="text" v-model="boxVal">
     </label>
-    <button @click="logBox">Submit</button>
+    <button @click="logBox" :class="{'color-red': clicked}">Submit</button>
     <ul class="places">
       <li :key="index" :title="key" v-for="(item, key, index) in names" v-text="item"/>
     </ul>
@@ -25,12 +25,14 @@
             this.names['huge buses'] = this.boxVal;
         }
 
+        this.clicked = true;
         this.boxVal = ''
       }
     },
     data() {
       return {
         boxVal: '',
+        clicked: false,
         names: {
             airport: 'Ukonga',
             goatSales: 'Vingunguti',
@@ -52,5 +54,12 @@
   }
   ul {
     list-style-type: none
+  }
+  .color-red {
+    background: red;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    outline: none
   }
 </style>

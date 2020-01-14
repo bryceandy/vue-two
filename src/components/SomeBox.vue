@@ -55,10 +55,14 @@
   ul {
     list-style-type: none
   }
+  button {
+    background: transparent
+  }
   .color-red {
-    background: red;
+    background: darkred;
+    font-weight: bold;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     color: #fff;
     outline: none
   }

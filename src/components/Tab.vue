@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="isActive">
     <slot />
   </div>
 </template>
@@ -14,6 +14,11 @@
         data() {
             return {
                 isActive: false
+            }
+        },
+        computed: {
+            href() {
+                return "#"+this.name.toLowerCase().replace(/ /g, '-')
             }
         },
         mounted() {

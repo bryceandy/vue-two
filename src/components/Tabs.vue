@@ -3,7 +3,7 @@
     <div class="tabs">
       <ul>
         <li :key="tab.index" v-for="tab in tabs" :class="{'is-selected': tab.isActive}">
-          <a href="#" @click="selectTab(tab)">{{ tab.name }}</a>
+          <a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
         </li>
       </ul>
     </div>
@@ -27,10 +27,7 @@
         },
         methods: {
             selectTab(currentTab) {
-
-                this.tabs.forEach((tab) => {
-                    tab.isActive = (currentTab.name === tab.name)
-                })
+                this.tabs.forEach((tab) => tab.isActive = (currentTab.name === tab.name))
             }
         }
     }

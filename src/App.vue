@@ -1,22 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png"/>
 
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Tabs>
+      <Tab name="About Us" :selected="true">
+        <p>Wanna know more about us?</p>
+      </Tab>
+      <Tab name="Our Culture">
+        <p>We talk a lot about football</p>
+      </Tab>
+      <Tab name="Join Us">
+        <p>Feel like you are the right candidate for our team?</p>
+      </Tab>
+    </Tabs>
 
-    <SomeBox />
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
-  import SomeBox from "./components/SomeBox";
+import Tabs from "./components/Tabs";
+import Tab from "./components/Tab";
 
   export default {
     name: 'app',
     components: {
-      HelloWorld,
-      SomeBox
+      Tabs,
+      Tab
     }
   }
 </script>

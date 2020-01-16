@@ -11,6 +11,9 @@
       <Tab name="Join Us">
         <p>Feel like you are the right candidate for our team?</p>
       </Tab>
+      <Tab name="Coupons">
+        <Coupon @applied="onCouponApplied" />
+      </Tab>
     </Tabs>
 
   </div>
@@ -19,12 +22,19 @@
 <script>
 import Tabs from "./components/Tabs";
 import Tab from "./components/Tab";
+import Coupon from "./components/Coupon";
 
   export default {
     name: 'app',
     components: {
       Tabs,
-      Tab
+      Tab,
+      Coupon
+    },
+    methods: {
+      onCouponApplied () {
+          alert('It was applied!')
+      }
     }
   }
 </script>

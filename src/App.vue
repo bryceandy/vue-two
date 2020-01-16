@@ -13,6 +13,7 @@
       </Tab>
       <Tab name="Coupons">
         <Coupon @applied="onCouponApplied" />
+        <h1 v-show="couponApplied">Your coupon was applied</h1>
       </Tab>
     </Tabs>
 
@@ -31,9 +32,14 @@ import Coupon from "./components/Coupon";
       Tab,
       Coupon
     },
+      data() {
+        return {
+            couponApplied: false
+        }
+      },
     methods: {
       onCouponApplied () {
-          alert('It was applied!')
+          this.couponApplied = true
       }
     }
   }

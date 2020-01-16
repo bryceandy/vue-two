@@ -7,10 +7,10 @@
         </li>
       </ul>
     </div>
+    <hr>
     <div class="tab-details">
       <slot />
     </div>
-    <hr>
   </div>
 </template>
 
@@ -34,6 +34,12 @@
 </script>
 
 <style scoped>
+  .tabs {
+    text-align: right
+  }
+  ul {
+    padding-inline-start: 0
+  }
   ul li {
     display: inline-block
   }
